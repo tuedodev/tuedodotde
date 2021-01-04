@@ -1,0 +1,33 @@
+<nav class="pagination is-medium is-centered" role="navigation" aria-label="pagination">
+    <ul class="pagination-list">
+    {% if page_obj.has_previous %}
+        {% if  page_obj.number > 4 %}
+            <li>
+                <a class="pagination-link" href="?page=1{{ searchstring | safe }}" aria-label="Goto first page">
+                    <span class="icon is-medium">
+                        <i class="fas fa-angle-double-left fa-2x"></i>
+                    </span>
+                </a>
+            </li>
+        {% endif %}
+    {% endif%}
+    {% for num in page_obj.paginator.page_range%}
+        {% if page_obj.number == num %}
+            <li><a class="pagination-link is-current" href="?page={{ num }}{{ searchstring | safe}}" aria-label="Page {{ num }}" aria-current="page">{{ num }}</a></li>
+        {% elif num > page_obj.number|add:'-4' and num < page_obj.number|add:'4' %}
+            <li><a class="pagination-link" href="?page={{ num }}{{ searchstring | safe}}" aria-label="Goto page {{ num }}">{{ num }}</a></li>
+        {% endif %}
+    {% endfor %}
+    {% if page_obj.has_next %}
+        {% if  page_obj.number < page_obj.paginator.num_pages|add:'-3' %}
+            <li>
+                <a class="pagination-link" href="?page={{ page_obj.paginator.num_pages }}{{ searchstring | safe}}" aria-label="Goto last page">
+                    <span class="icon is-medium">
+                        <i class="fas fa-angle-double-right fa-2x"></i>
+                    </span>
+                </a>
+            </li>
+        {% endif %}
+    {% endif%}
+    </ul>
+</nav>

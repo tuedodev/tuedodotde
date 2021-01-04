@@ -1,0 +1,72 @@
+{% extends 'werkstatt/base.html' %} {% load static %} {% load mathfilters %} {% block main_content %}
+<section class="section mt-6 pb-0">
+	<div class="container">
+		<div class="columns">
+			<div class="column is-8 is-offset-2">
+				<div class="tuedo-header-container" data-aos="fade-left">
+					<div class="tuedo-header__vertical-title-1 tuedo-header">{{ searching|lower }}</div>
+					<div class="tuedo-header__vertical-title-2 tuedo-header">{{ searching|lower }}</div>
+					<div class="tuedo-header__background">
+						<div class="tuedo-header__background-text">{{ searching|lower }}</div>
+						<div class="tuedo-header__background-text">{{ searching|lower }}</div>
+						<div class="tuedo-header__background-text">{{ searching|lower }}</div>
+					</div>
+					<div class="tuedo-header__subtitle">
+						<h3>{% autoescape on %}{{ searching_for|truncatechars:18 }}{% endautoescape %}</h3>
+						<h4>
+							{% if number_search_result > 0 %} {{ number_search_result }} {{ searching_hits }} {% else %}  {{ searching_no_hits }} {% endif %}
+						</h4>
+					</div>
+				</div>
+				{% for blog in blogs %}
+				<a class="" href="{{blog.absolute_url}}">
+					<div class="w-cart mb-6" data-aos="fade-left" data-aos-delay="{{forloop.counter|mul:150}}">
+						<div class="w-cart--image is-relative">
+							<img src="{{blog.image.url}}" />
+							{% if blog.draft is True %}
+							 	<div class="tuedo-draft"></div> 
+							{% endif %}
+						</div>
+						<div class="w-cart--body">
+							<div class="w-cart--body-header">
+								<h2 class="title is-2">{{blog.title}}</h2>
+							</div>
+							<div class="w-cart--meta is-size-5">
+								<div class="w-cart--meta-date">
+									<span class="icon">
+										<i class="far fa-calendar-alt"></i>
+									</span>
+									<span>{{ blog.date_posted|date:"d.m.Y"}}</span>
+								</div>
+								<div class="w-cart--meta-author">
+									<span class="icon">
+										<i class="fas fa-user"></i>
+									</span>
+									<span>{{ blog.author}}</span>
+								</div>
+							</div>
+							<div class="w-cart--summary">
+								<p class="is-size-4">{{ blog.summary|truncatewords:20 }}</p>
+							</div>
+							<div class="w-cart--tuedocontainer">
+								<div class="button is-rounded w-cart--tuedocontainer-button">
+									<span class="icon is-medium">
+										<i class="fas fa-arrow-right fa-2x"></i>
+									</span>
+									<span>{{ read_on }}</span>
+								</div>
+								<div class="button is-rounded w-cart--tuedocontainer-tuedo">
+									<span>{{ blog.get_tuedo_no }}</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
+				{% endfor %} {% if is_paginated %}
+				<div class="section pt-0">{% include "werkstatt/pagination.html"%}</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}

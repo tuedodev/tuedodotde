@@ -1,0 +1,34 @@
+{% extends 'werkstatt/base.html' %} 
+{% load static %}
+{% load mathfilters %}
+{% block main_content %}
+<section class="section mt-6">
+	<div class="container">
+		<div class="columns is-centered">
+			<div class="column is-two-thirds">
+				<div class="tuedo-header-container" data-aos="fade-left">
+					<div class="tuedo-header__vertical-title-1 tuedo-header">{{ header|lower }}</div>
+					<div class="tuedo-header__vertical-title-2 tuedo-header">{{ header|lower }}</div>
+					<div class="tuedo-header__background">
+						<div class="tuedo-header__background-text">{{ header|lower }}</div>
+						<div class="tuedo-header__background-text">{{ header|lower }}</div>
+						<div class="tuedo-header__background-text">{{ header|lower }}</div>
+					</div>
+					<div class="tuedo-header__subtitle has-text-centered">
+						<h3></h3>
+						<h4></h4>
+					</div>
+				</div>
+				{% for milestone in milestones %}
+				<div class="tuedo-milestones" data-aos="fade-left" data-aos-delay="{{forloop.counter|mul:150}}">
+					<div class="tuedo-milestones__vertical-title-1">{{ milestone.header|lower }}</div>
+					<div class="tuedo-milestones__vertical-title-2">{{ milestone.header|lower }}</div>
+					<div class="tuedo-milestones__content">{{ milestone.content|safe }}</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</section>
+		
+{% endblock %}

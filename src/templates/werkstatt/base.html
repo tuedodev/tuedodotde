@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="de" class="has-navbar-fixed-top">
+	{% include "werkstatt/head.html" %}
+	<body>
+		{% include "werkstatt/navigation.html" %} {% block main_content %}{% endblock %} 
+		<div class="modal"></div>
+		<script type="text/javascript" src="{% static 'dist/bundle.js' %}"></script>
+		{% include "werkstatt/footer.html" %} 
+		{% block additional_js_files %}{% endblock %}
+	</body>
+</html>

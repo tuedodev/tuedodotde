@@ -1,0 +1,17 @@
+{% autoescape off %}
+Hallo!
+
+Sie haben sich in unserem Newsletter eingetragen.
+
+Bitte aktivieren Sie Ihren Link, indem Sie hier klicken:
+
+{{subscribe_link}}
+
+Sie können sich mit folgendem Link wieder aus der Newsletter-Liste austragen:
+
+{{unsubscribe_link}} 
+
+Ihr Account und alle Zugangsdaten werden dann wieder gelöscht.
+
+Ihr Tuedo-Team
+{% endautoescape %}

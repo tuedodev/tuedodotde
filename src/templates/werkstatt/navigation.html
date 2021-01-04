@@ -1,0 +1,75 @@
+{% load static %}
+
+<nav class="navbar is-fixed-top is-spaced" role="navigation" aria-label="main navigation">
+	<div class="navbar-brand my-3">
+		<a class="navbar-item" href="{% url 'index' %}">
+			<img src="{% static 'img/tuedo-logo-50.png' %}" alt="Logo" height="50" />
+		</a>
+		<a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+			<span aria-hidden="true"></span>
+			<span aria-hidden="true"></span>
+			<span aria-hidden="true"></span>
+		</a>
+	</div>
+	<div class="navbar-menu" id="navMenu">
+		<div class="navbar-start navbar-start--centered">
+			{% for first_level in navbar_items %}
+				<div class="{{ first_level.0 }}">
+					<a href="{% url first_level.1.1 %}" class="{{ first_level.1.2 }}">{{ first_level.1.0|lower }}</a>
+					{% if first_level.2 %}
+						<div class="{{ first_level.2.0.0 }}">
+							{% for second_level in first_level.2 %}
+								<a href="{% url second_level.1.1 %}" class="{{ second_level.1.2 }}">{{ second_level.1.0|lower }}</a>
+							{% endfor %}
+						</div>
+					{% endif %}
+				</div>
+			{% endfor %}
+
+			{% comment %}
+			<div class="navbar-item"><a href="{% url 'werkstatt' %}" class="navbar-link is-size-3 is-arrowless">werkstatt</a></div>
+			<div class="navbar-item has-dropdown is-hoverable">
+				<a class="navbar-link is-size-3 is-arrowless" href="{% url 'about' %}">
+					about
+				</a>
+				<div class="navbar-dropdown is-boxed">
+					<a class="navbar-item is-size-3 is-arrowless" href="{% url 'referenzen' %}">
+						referenzen
+					</a>
+				</div>
+			</div>
+			<div class="navbar-item has-dropdown is-hoverable">
+				<a class="navbar-link is-size-3 is-arrowless" href="{% url 'kontakt' %}">
+					kontakt
+				</a>
+				<div class="navbar-dropdown is-boxed">
+					<a class="navbar-item is-size-3 is-arrowless" href="{% url 'impressum' %}">
+						impressum
+					</a>
+					<a class="navbar-item is-size-3 is-arrowless" href="{% url 'datenschutz' %}">
+						datenschutz
+					</a>
+				</div>
+			</div>
+			{% endcomment %}
+		</div>
+		<div class="navbar-end is-hidden-mobile is-hidden-tablet-only">
+			<div class="navbar-item">
+				<form action="{% url 'search' %}" class="search">
+					<div class="field is-grouped">
+						<p class="control">
+							<input type="text" class="input is-standardform" name="s" />
+						</p>
+						<p class="control">
+							<button type="submit" class="button is-primary">
+								<span class="icon">
+									<i class="fas fa-search" aria-hidden="true"></i>
+								</span>
+							</button>
+						</p>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</nav>

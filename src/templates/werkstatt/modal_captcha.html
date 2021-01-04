@@ -1,0 +1,55 @@
+<div class="modal-background"></div>
+<div class="modal-card">
+	<form class="captcha" action="" novalidate {% for key, value in dataset_error_msg.items %}{{key}}="{{ value }}"{% endfor %}>
+		<header class="modal-card-head">
+			<p class="modal-card-title">{{ captcha_modal_header }}</p>
+			<span class="button modal-delete is-small">
+				<span class="icon has-text-danger">
+					<i class="fas fa-window-close fa-3x" aria-hidden="true"></i>
+				</span>
+			</span>
+		</header>
+		<section class="modal-card-body">
+			{% for message in captcha_modal_message %}
+				<p>{{ message }}</p>
+			{% endfor %}
+			<div class="mt-5 mb-5" style="display: flex; align-items: center; flex-direction: rowM;">
+				<span
+					style="flex: 0 0 auto;"
+					type="button"
+					class="button modal-reload is-medium is-link is-info mr-3"
+					id="icon_reload_button"
+					onsubmit="return false;"
+				>
+					<span class="icon">
+						<i class="fas fa-redo fa-2x" aria-hidden="true"></i>
+					</span>
+				</span>
+				<figure style="flex: 0 0 auto;" id="captcha-image" class="image mr-3"></figure>
+				<div style="flex: 1 0 auto;" class="">
+					<div class="field is-relative" data-validation="required">
+						<p class="help is-info field__label">
+							&nbsp;
+						</p>
+						<p class="control has-icons-right">
+							<input class="input is-standardform" id="id_captcha" name="captcha_input" type="text" />
+							<span class="icon is-right">
+								<span class="has-text-success"><i class="fas fa-check"></i></span>
+								<span class="has-text-danger"><i class="fas fa-exclamation-triangle"></i></span>
+							</span>
+						</p>
+						<div class="help field__help">
+							<p class="field__help__msg has-text-danger"></p>
+						</div>
+						<label for="id_captcha" class="labelProxy">{{ captcha_code }}</label>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer class="modal-card-foot">
+			<p class="control">
+				<a type="button" class="button is-link">{{ btn_msg }}</a>
+			</p>
+		</footer>
+	</form>
+</div>

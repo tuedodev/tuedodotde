@@ -1,0 +1,21 @@
+{% autoescape off %}
+Hallo Administrator von tuedo!
+
+Ein neuer Kommentar zum Beitrag "{{blogpost}}" wurde soeben abgeschickt:
+
+*****
+{{comment_short}}
+*****
+
+Zum Freischalten des Kommentars klicke bitte auf:
+
+{{confirm_link}}
+
+Zum Löschen des Kommentars klicke bitte auf:
+
+{{delete_link}} 
+
+Der Kommentar wird dann unwiederbringlich gelöscht.
+
+Dein Tuedo-Team
+{% endautoescape %}

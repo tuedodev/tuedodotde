@@ -1,0 +1,158 @@
+$checkbox_width: 2.5rem;
+$checkbox_height: 2.5rem;
+$gap: 0.5rem;
+// https://codepen.io/LucaCorigliano/pen/xjbOqB
+
+@mixin button-small {
+	font-size: $size-small;
+}
+@mixin button-medium {
+	font-size: $size-medium;
+}
+@mixin button-large {
+	font-size: $size-large;
+}
+
+// Here starts the real code
+label.is-checkbox {
+	background: transparent;
+
+	&.is-primary {
+		background: $primary;
+	}
+	&.is-info {
+		background: $info;
+	}
+	&.is-danger {
+		background: $danger;
+	}
+	&.is-warning {
+		background: $warning;
+		color: $text;
+		.checkmark:before {
+			background: rgba($light, 0.8);
+		}
+	}
+	&.is-success {
+		background: $success;
+	}
+	&.is-static {
+		background-color: $button-static-background-color;
+		border-color: $button-static-border-color;
+		color: $button-static-color;
+		box-shadow: none;
+		pointer-events: none;
+		.checkmark:before {
+			background: rgba($button-static-color, 0.3);
+		}
+	}
+	border: 0; //$button-border-width solid transparent;
+	color: $text;
+	text-align: left;
+	white-space: normal;
+	display: inline-grid;
+	grid-template-columns: $checkbox_width auto;
+	grid-template-rows: $checkbox_height + 1rem;
+	gap: $gap;
+	//justify-content: center;
+	&.is-primary {
+		background: $primary;
+	}
+	padding: 0; // $button-padding-vertical $button-padding-horizontal;
+	border-radius: $radius-small;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	.checkmark {
+		color: transparent;
+		position: relative;
+		i {
+			z-index: 1;
+		}
+		&:before {
+			content: '';
+			position: absolute;
+			right: 0;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			z-index: 0;
+			border-radius: $radius-small;
+			background: transparent;
+			border: 2px solid $standardformborder;
+		}
+	}
+	input[type='checkbox'] {
+		position: absolute;
+		visibility: hidden;
+		cursor: pointer;
+		&:checked ~ .checkmark {
+			color: $standardformborder;
+		}
+	}
+	&:hover {
+		& input[type='checkbox'] {
+			&:checked ~ .checkmark {
+				color: $input-hover-border-color;
+			}
+		}
+		& .checkmark {
+			&:before {
+				border: 2px solid $input-hover-border-color;
+			}
+		}
+	}
+	&.is-rounded {
+		border-radius: 9999px;
+		.checkmark:before {
+			border-radius: 9999px;
+		}
+	}
+
+	/*&:hover {
+		box-shadow: inset 0px 0px 9999px rgba(black, 0.05);
+	}
+	&:active {
+		box-shadow: inset 0px 0px 9999px rgba(black, 0.1);
+	}*/
+
+	&.is-small {
+		@include button-small;
+	}
+	&.is-medium {
+		@include button-medium;
+	}
+	&.is-large {
+		@include button-large;
+	}
+	.icon {
+		&,
+		&.is-small,
+		&.is-medium,
+		&.is-large {
+			height: $checkbox_height;
+			width: $checkbox_width;
+			//margin-left: -0.35em;
+			margin-right: 0.35em;
+		}
+		/*
+		&:first-child:not(:last-child) {
+			margin-right: 0.1875em;
+			margin-left: calc(-01.375em - #{$button-border-width});
+		}
+		&:last-child:not(:first-child) {
+			margin-left: 0.1875em;
+
+			margin-right: calc(-0.375em - #{$button-border-width});
+		}
+		&:first-child:last-child {
+			margin-left: calc(-0.575em - #{$button-border-width});
+		}*/
+	}
+	& span.icon.checkmark {
+		align-self: center;
+	}
+}

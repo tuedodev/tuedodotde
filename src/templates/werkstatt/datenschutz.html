@@ -1,0 +1,33 @@
+{% extends 'werkstatt/base.html' %} 
+{% load static %} 
+{% block main_content %}
+<section class="section mt-6">
+	<div class="container">
+		<div class="columns is-centered">
+			<div class="column is-two-thirds">
+				<div class="tuedo-header-container">
+					<div class="tuedo-header__vertical-title-1 tuedo-header">{{ header.0|lower }}</div>
+					<div class="tuedo-header__vertical-title-2 tuedo-header">{{ header.0|lower }}</div>
+					<div class="tuedo-header__background">
+						<div class="tuedo-header__background-text">{{ header.0|lower }}</div>
+						<div class="tuedo-header__background-text">{{ header.0|lower }}</div>
+						<div class="tuedo-header__background-text">{{ header.0|lower }}</div>
+					</div>
+					<div class="tuedo-header__subtitle has-text-centered">
+						<h3>{{ header.1 }}</h3>
+						<h4>{{ header.2 }}</h4>
+					</div>
+				</div>
+				{% for daten in datenschutz %}
+				<div class="tuedo-milestones" data-aos="{% cycle 'fade-left' 'fade-right' %}">
+					<div class="tuedo-milestones__vertical-title-1">{{ daten.header }}</div>
+					<div class="tuedo-milestones__vertical-title-2">{{ daten.header }}</div>
+					<div class="tuedo-milestones__content privacy">{{ daten.content|safe }}</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</section>
+		
+{% endblock %}

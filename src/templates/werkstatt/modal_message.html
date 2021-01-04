@@ -1,0 +1,21 @@
+<div class="modal-background"></div>
+<div class="modal-card">
+	<header class="modal-card-head">
+		<p class="modal-card-title">{{ modal_message_header }}</p>
+		<span class="button modal-delete is-small">
+			<span class="icon has-text-danger">
+				<i class="fas fa-window-close fa-3x" aria-hidden="true"></i>
+			</span>
+		</span>
+	</header>
+	<section class="modal-card-body">
+		{% for msg in messages %}
+			<p>{{ msg }}</p>
+		{% endfor %}
+	</section>
+	<footer class="modal-card-foot">
+		<p class="control">
+			<a type="button" class="button is-link">{{button}}</a>
+		</p>
+	</footer>
+</div>

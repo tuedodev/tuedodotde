@@ -1,0 +1,14 @@
+{% load static %}{% load meta %}
+
+<head {% meta_namespaces %}>
+	{% include "meta/meta.html" %}
+	{% if google_site_verification %}
+		<meta name="google-site-verification" content="{{ google_site_verification }}" />
+	{% endif %}
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+	<link rel="stylesheet" type="text/css" href="{% static 'dist/main.css' %}" />
+	<link rel="shortcut icon" href="{% static 'img/favicon-16x16.png' %}">
+	<link rel="icon" type="image/png" href="{% static 'img/favicon-16x16.png' %}" sizes="16x16">
+	<link rel="icon" type="image/png" href="{% static 'img/favicon-32x32.png' %}" sizes="32x32">
+	<link rel="icon" type="image/png" href="{% static 'img/favicon-96x96.png' %}" sizes="96x96">
+</head>

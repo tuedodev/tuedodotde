@@ -1,0 +1,74 @@
+{% extends 'werkstatt/base.html' %} 
+{% load static %} 
+{% load mathfilters %}
+{% block main_content %}
+
+<section class="hero is-fullheight background-img">
+	<div class="hero--tuedo mt-6">
+		<div class="hero--tuedo-header">
+			<div class="has-text-centered">
+				{% if messages %}
+					{% for message in messages%}
+							<div class="notification my-6 is-{{message.tags}} is-light has-text-white is-size-4-tablet has-text-weight-bold">
+								<button class="delete" aria-label="delete"></button>
+								{{ message }}
+							</div>
+					{% endfor %}
+				{%endif %}
+	      		<h1 class="title is-1 is-spaced has-text-light">{{ website_title.0 }}</h1>
+				<h4 class="subtitle is-4 has-text-light">{{ website_title.1 }}</h4>
+	      	</div>
+	    </div>
+		<div class="main-content">
+			<div class="container">
+				<div class="columns is-mobile is-tablet is-multiline is-centered has-text-centered">
+					{% for blog in featured_blogs %}
+					<div class="column is-4-desktop is-7-tablet is-10-mobile" style="display:grid; grid-auto-rows:1fr;" >
+						<div class="card" data-aos="fade-up" data-aos-delay="{{ forloop.counter0|mul:200 }}">
+							<div class="card-header-container">
+								<div class="card-image-wrapper">
+									<img src="{{ blog.image.url}}" alt="{{ blog.image_alt}}"/>
+								</div>
+								<div class="card-content-header">
+									<h2><a href="{{ blog.absolute_url }}"><span>{{ blog.title }}<span></a></h2>
+								</div>
+							</div>
+							<div class="level is-mobile is-tablet">
+								<div class="level-left">
+									<p class="level-item">
+										<span class="icon">
+											<i class="far fa-calendar-alt"></i>
+										</span>
+										<span>{{ blog.date_posted|date:"d.m.Y"}}</span>
+									</p>
+								</div>
+								<div class="level-right">
+									<p class="level-item">
+										<span class="icon">
+											<i class="fas fa-user"></i>
+										</span>
+										<span class="author">{{ blog.author}}</span>
+									</p>
+								</div>
+							</div>
+							<div class="card-content-container">
+								<p class="has-text-left">{{ blog.summary }}</p>
+							</div>
+							<div>
+								<a role="button" class="button is-link has-text-weight-bold mt-4 mb-4" href="{{ blog.absolute_url }}">{{ read_on }}</a>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>  
+</section>
+
+
+
+
+
+
+{% endblock %}

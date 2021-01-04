@@ -1,0 +1,22 @@
+{% extends 'werkstatt/base.html' %} 
+{% load static %} 
+{% block main_content %}
+<section class="section mt-6">
+	<div class="container">
+		<div class="columns is-centered">
+			<div class="column is-two-thirds is-full-tablet has-text-centered">
+                <div class="pb-5" data-aos="fade-left"><h2 class="title is-2 has-background-gradient-warning has-text-white has-text-weight-bold py-4 rounded-4">{{ error_page_header }}</h2></div>
+                <div class="columns is-centered" data-aos="fade-left" data-aos-delay="150">
+                    <div class="column is-half is-full-tablet">
+                        <figure class="image">
+                            <img src="{%static 'img/tuedo-error-page-hero.png' %}" alt="Tuedo Error Fehler Seite Hero Foto">
+                        </figure>
+                    </div>
+                </div>
+                <p class="py-5 has-background-gradient-warning has-text-white is-size-4 has-text-weight-bold rounded-4" data-aos="fade-left" data-aos-delay="300">{{ error_message }}</p>
+                <div class="py-5" data-aos="fade-left" data-aos-delay="450"><a role="button" class="button is-info is-large has-text-weight-bold" href="{{ index_url }}">{{ button_text }}</a></div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,101 @@
+{% extends 'werkstatt/base.html' %} {% load static %} {% block main_content %}
+<section class="section mt-6">
+	<div class="container">
+		<div class="columns is-centered">
+			<div class="column is-two-thirds">
+				<div class="tuedo-header-container" data-aos="fade-left">
+					<div class="tuedo-header__vertical-title-1 tuedo-header">{{ header.0|lower }}</div>
+					<div class="tuedo-header__vertical-title-2 tuedo-header">{{ header.0|lower }}</div>
+					<div class="tuedo-header__background">
+						<div class="tuedo-header__background-text">{{ header.0|lower }}</div>
+						<div class="tuedo-header__background-text">{{ header.0|lower }}</div>
+						<div class="tuedo-header__background-text">{{ header.0|lower }}</div>
+					</div>
+					<div class="tuedo-header__subtitle has-text-centered">
+						<h3>{{ header.1 }}</h3>
+						<h4>{{ header.2 }}</h4>
+					</div>
+				</div>
+				<div class="card" data-aos="fade-left" data-aos-delay="150">
+					<div class="card-content">
+						<form class="contact" action="" autocomplete="off" novalidate {% for key, value in contact_form.dataset_error_msg.items %}{{key}}="{{ value }}"{% endfor %}>
+							<div class="field is-relative" data-validation="required">
+								<p class="help is-info field__label">&nbsp;</p>
+								<p class="control has-icons-right">
+									{{ contact_form.name }}
+									<span class="icon is-right">
+										<span class="has-text-success"><i class="fas fa-check"></i></span>
+										<span class="has-text-danger"><i class="fas fa-exclamation-triangle"></i></span>
+									</span>
+								</p>
+								<div class="help field__help">
+									<p class="field__help__msg has-text-danger"></p>
+								</div>
+								<label for="{{contact_form.name.id_for_label}}" class="labelProxy">
+									{{contact_form.name.label}}
+								</label>
+							</div>
+							<div class="field is-relative" data-validation="email">
+								<p class="help is-info field__label">&nbsp;</p>
+								<p class="control has-icons-right">
+									{{ contact_form.email }}
+									<span class="icon is-right">
+										<span class="has-text-success"><i class="fas fa-check"></i></span>
+										<span class="has-text-danger"><i class="fas fa-exclamation-triangle"></i></span>
+									</span>
+								</p>
+								<div class="help field__help">
+									<p class="field__help__msg has-text-danger"></p>
+								</div>
+								<label for="{{contact_form.email.id_for_label}}" class="labelProxy">
+									{{contact_form.email.label}}
+								</label>
+							</div>
+							<div class="field is-relative" data-validation="required">
+								<p class="help is-info field__label">&nbsp;</p>
+								<p class="control has-icons-right">
+									{{ contact_form.content }}
+									<span class="icon is-right">
+										<span class="has-text-success"><i class="fas fa-check"></i></span>
+										<span class="has-text-danger"><i class="fas fa-exclamation-triangle"></i></span>
+									</span>
+								</p>
+								<div class="help field__help">
+									<p class="field__help__msg has-text-danger"></p>
+								</div>
+								<label for="id_content" class="labelProxy">{{contact_form.content.label}}</label>
+							</div>
+							<div class="field is-relative" data-validation="required">
+								<p class="help is-info field__label">&nbsp;</p>
+								<label class="is-checkbox is-large">
+									<input id="id_confirmed" name="confirmed" type="checkbox" />
+									<span class="icon is-large checkmark">
+										<i class="fa fa-check"></i>
+									</span>
+									<div class="control has-icons-right">
+										<span class="is-size-5 field__confirmed"> {{contact_form.confirmed.label | safe}} </span>
+										<span class="icon is-right">
+											<span class="has-text-success"><i class="fas fa-check"></i></span>
+											<span class="has-text-danger"><i class="fas fa-exclamation-triangle"></i></span>
+										</span>
+									</div>
+								</label>
+								<div class="help field__help">
+									<p class="field__help__msg has-text-danger"></p>
+								</div>
+								<label for="id_confirmed" class="labelProxy"></label>
+							</div>
+							<input type="hidden" id="site_path" name="site_path" value="{{ site_path }}" />
+							<div class="field is-relative has-text-centered">
+								<p class="control">
+									<button class="button is-info">{{ btn_text }}</button>
+								</p>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}

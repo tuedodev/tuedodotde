@@ -1,0 +1,62 @@
+{% load static %}
+<footer class="footer" id="main-footer">
+	<div class="container">
+		<div class="footer-wrapper">
+			<div class="footer-placeholder"></div>
+			<div class="footer-content">
+				<div class="columns">
+					<div class="column is-hidden-mobile"></div>
+					<div class="column is-two-thirds">
+						<div class="is-block">
+							<div class="columns is-mobile">
+								{% for k, v in social_links.items %}
+									<div class="column has-text-centered">
+										<a href="{{v.0}}" target="_blank">
+											<span class="icon is-large has-text-info is-link">
+												<i class="{{v.1}}"></i>
+											</span>
+										</a>
+									</div>
+								{% endfor %}
+							</div>
+						</div>
+						<div class="column has-text-centered">
+							<form action="#" class="subscribe" novalidate {% for key, value in contact_form.dataset_error_msg.items %}{{key}}="{{ value }}"{% endfor %}>
+								<div class="field-container">
+									<p class="help is-info field__label">
+										&nbsp;
+									</p>
+									<div class="field is-grouped" data-validation="required email">
+										<p class="control has-icons-right is-expanded">
+											{{ subscription_form.subscription_email }}
+											<span class="icon is-right">
+												<span class="has-text-success"><i class="fas fa-check"></i></span>
+												<span class="has-text-danger"><i class="fas fa-exclamation-triangle"></i></span>
+											</span>
+										</p>
+										<p class="control">
+											<button class="button is-info">
+												{{ subscribe_button }}
+											</button>
+										</p>
+									</div>
+									<div class="help field__help has-text-left">
+										<p class="field__help__msg has-text-danger"></p>
+									</div>
+									<input type="hidden" id="site_path" name="site_path" value="{{ site_path }}" />
+									<label for="{{subscription_form.subscription_email.id_for_label}}" class="labelProxy"
+										>{{ subscription_form.subscription_email.label }}</label
+									>
+								</div>
+							</form>
+						</div>
+						<div class="is-block mt-3">
+							<p class="has-text-centered is-size-4 has-text-weight-bold">&copy; {{website_owner}} {{footer_year}}</p>
+						</div>
+					</div>
+					<div class="column is-hidden-mobile"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>

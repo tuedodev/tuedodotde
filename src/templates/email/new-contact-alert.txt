@@ -1,0 +1,13 @@
+{% autoescape off %}
+Hallo Administrator!
+
+Eine neue Kontaktanfrage wurde soeben abgeschickt:
+
+*****
+Name: {{ name }}
+E-Mail: {{ email }}
+*****
+{{content}}
+*****
+{{ date_posted |date:"d.m.Y H.i:s"}} Uhr
+{% endautoescape %}
