@@ -70,7 +70,7 @@ class BlogPost(ModelMeta, models.Model):
         'description': 'summary',
         'image': 'get_meta_image',
     }
-    
+
     def get_meta_image(self):
         if self.image:
             return self.image.url

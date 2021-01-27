@@ -31,7 +31,7 @@
 							</div>
 						</div>
 						<div class="featured-img is-relative">
-							<img src="{{blog.image.url}}" alt="{{blog.image_alt}}" />
+							<img src="{{request.scheme}}://{{request.META.HTTP_HOST}}{{blog.image.url}}" alt="{{blog.image_alt}}" />
 							{% if blog.draft is True %}
 							 	<div class="tuedo-draft"></div> 
 							{% endif %}

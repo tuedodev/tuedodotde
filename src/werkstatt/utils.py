@@ -93,7 +93,9 @@ def getSiteCode(str):
 def updateMeta(defaultObject, updateObject):
     items = getDict(updateObject).items()
     for attr, value in items:
-        setattr(defaultObject, attr, value)
+        if (value):
+            print(attr, " ", value)
+            setattr(defaultObject, attr, value)
     return defaultObject
 
 def getDict(updateObject):

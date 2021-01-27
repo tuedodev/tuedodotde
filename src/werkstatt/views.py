@@ -247,7 +247,7 @@ def blogpost(request, *args, **kwargs):
             meta_database = {}
         meta_merged = {**meta_as_meta, **meta_database} 
         context['meta'] =  updateMeta(meta, meta_merged)
-
+        
         all_comments = blog.comments.all()
         new_comment = None
         new_comment_html = None
