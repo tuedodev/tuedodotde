@@ -17,6 +17,8 @@ $beige: #f5f5bc;
 $brown: #676778;
 $gray-background: $brown;
 
+$pre-background: #1e1e1e; // see _hljs_vs2015.scss
+
 // Update Bulma's global variables
 $family-sans-serif: 'Open Sans', sans-serif;
 $grey-dark: $black;
@@ -96,6 +98,9 @@ html {
 sup {
 	vertical-align: super;
 	font-size: smaller;
+}
+pre {
+	border-radius: 0.25rem;
 }
 
 // Tuedo-Header
@@ -454,6 +459,8 @@ h1.blog-header {
 		background-color: rgba(50, 50, 50, 0.75);
 		padding: 0.4rem 0.6rem;
 		opacity: 1;
+		border-top-left-radius: 0.25rem;
+		border-bottom-left-radius: 0.25rem;
 		transition: opacity 0.2s ease-out, background-color 0.2s ease-out;
 
 		& .calendar {
@@ -488,6 +495,8 @@ h1.blog-header {
 		grid-area: 1 / 1 / 2 / 3;
 		z-index: 0;
 		overflow: hidden;
+		border-radius: 0.25rem;
+
 		& img {
 			max-width: 100%;
 			height: auto;
@@ -612,6 +621,65 @@ h1.blog-header {
 			outline: 2px solid lighten($blue, 20%);
 		}
 	}
+
+	& .infobox {
+		background-color: rgba(50, 50, 50, 0.15);
+		border-radius: 0.25rem;
+
+		& > a {
+			display: inline-block;
+			cursor: pointer;
+			width: 100%;
+			color: inherit;
+			text-decoration: none;
+			transition: background-color 200ms ease-in-out;
+			&:hover {
+				background-color: rgba(50, 50, 50, 0.18);
+				border-radius: inherit;
+				color: inherit;
+			}
+		}
+		& > a > div,
+		& > div {
+			display: grid;
+			font-size: 1rem;
+			grid-template-columns: auto 1fr;
+			padding: 0.5rem 1rem;
+
+			& > div {
+				width: 100%;
+				text-align: left;
+
+				& > h3 {
+					margin: 0 0 0 1rem;
+					padding: 0.5rem 0;
+					font-size: 1.4rem;
+					font-weight: 800;
+					text-decoration: underline;
+				}
+				& > ul {
+					margin: 0 0 0 1rem;
+
+					& li {
+						font-size: 1.15rem;
+						font-weight: 600;
+					}
+				}
+				& > p {
+					margin-left: 1rem;
+					font-size: 1.2rem;
+					font-weight: 600;
+				}
+			}
+		}
+
+		&.vcentered {
+			& > a > div,
+			& > div {
+				align-items: center;
+			}
+		}
+	}
 }
 .blog-references {
 	grid-column: 1 / 6;
@@ -687,6 +755,8 @@ h1.blog-header {
 			grid-row: 1 / 2;
 			z-index: 0;
 			overflow: hidden;
+			border-radius: 0.25rem;
+
 			& img {
 				max-width: 100%;
 				opacity: 0.7;

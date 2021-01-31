@@ -94,7 +94,6 @@ def updateMeta(defaultObject, updateObject):
     items = getDict(updateObject).items()
     for attr, value in items:
         if (value):
-            print(attr, " ", value)
             setattr(defaultObject, attr, value)
     return defaultObject
 
