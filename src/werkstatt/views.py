@@ -228,6 +228,9 @@ def blogpost(request, *args, **kwargs):
         context['blog_next_hint'] = config.HINT['next-blog']
         context['blog'] = blog
         context['btn_text'] = config.BUTTON['send']
+        # Overwrites language_code provided by middleware context_processors if language_slug is different from settings
+        context['language_code'] = settings.LANGUAGE_CODE if config.getLanguageShort(language_code) is None else config.getLanguageShort(language_code)
+
         try:
             context['blog_previous'] = blog.get_previous_by_date_posted(draft=False)
         except:

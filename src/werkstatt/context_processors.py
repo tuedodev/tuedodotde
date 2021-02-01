@@ -3,7 +3,7 @@ from django.middleware.csrf import get_token
 from django.utils.functional import SimpleLazyObject
 from django.urls import reverse
 from meta.views import Meta
-from tuedo import config
+from tuedo import config, settings
 
 def get_subscription_form(request):
     subscription_form = SubscriptionForm()
@@ -24,6 +24,7 @@ def getConfigData(request):
         'website_title': config.WEBSITE_TITLE,
         'website_owner': config.WEBSITE_OWNER,
         'footer_year': f"{config.WEBSITE_STARTING_YEAR}" if config.CURRENT_YEAR==config.WEBSITE_STARTING_YEAR else f"{config.WEBSITE_STARTING_YEAR}-{config.CURRENT_YEAR}",
+        'language_code': settings.LANGUAGE_CODE,
         'google_site_verification': config.GOOGLE_SITE_VERIFICATION if not config.DEBUG else '',
     }
     return context
