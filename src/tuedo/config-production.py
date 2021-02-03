@@ -1,16 +1,16 @@
-import environ
 import datetime
+import json
 from django.utils.translation import gettext_lazy as _
 
-env = environ.Env()
-env.read_env(env.str('./', '.env'))
+with open('/etc/env-production.json') as env_file:
+	ENVIRONMENT = json.load(env_file)
 
-DEBUG = env.bool('DEBUG')
-WEBSITE_OWNER = env('WEBSITE_OWNER')
-WEBSITE_URL = env('WEBSITE_URL')
-WEBSITE_ADMINISTRATION_EMAIL = env('WEBSITE_ADMINISTRATION_EMAIL')
-WEBSITE_SENDER = env('WEBSITE_SENDER')
-WEBSITE_STARTING_YEAR =env.int('WEBSITE_STARTING_YEAR')
+DEBUG = ENVIRONMENT.get('DEBUG') == 'True'
+WEBSITE_OWNER = ENVIRONMENT.get('WEBSITE_OWNER')
+WEBSITE_URL = ENVIRONMENT.get('WEBSITE_URL')
+WEBSITE_ADMINISTRATION_EMAIL = ENVIRONMENT.get('WEBSITE_ADMINISTRATION_EMAIL')
+WEBSITE_SENDER = ENVIRONMENT.get('WEBSITE_SENDER')
+WEBSITE_STARTING_YEAR = int(ENVIRONMENT.get('WEBSITE_STARTING_YEAR'))
 WEBSITE_TITLE = ('Tuedo', 'The Vibrant World of the Web.')
 now = datetime.datetime.now()
 CURRENT_YEAR = now.year
@@ -34,15 +34,15 @@ SITES = (
 # Extra Meta Tags Values
 METATAGS = {
     'default': {
-        'title': _('Tuedo: The Vibrant World of the Web'),
-        'description': _('Tuedo: Webblog über Web-Development, Python, Django, Web-Design, CSS, React, Javascript, Gatsby'),
-        'keywords' : [_('Web Development'), _('Blog'), _('Python'), _('Javascript'), _('Portfolio Website')],
-        'extra_props': {
-            'viewport': 'width=device-width, initial-scale=1.0',
-        },
-        'extra_custom_props':[
-            ('http-equiv', 'Content-Type', 'text/html; charset=UTF-8'),
-        ]
+       	'title': _('Tuedo: The Vibrant World of the Web'),
+       	'description': _('Tuedo: Webblog über Web-Development, Python, Django, Web-Design, CSS, React, Javascript, Gatsby'),
+       	'keywords' : [_('Web Development'), _('Blog'), _('Python'), _('Javascript'), _('Portfolio Website')],
+       	'extra_props': {
+      		'viewport': 'width=device-width, initial-scale=1.0',
+       	},
+       	'extra_custom_props':[
+      		('http-equiv', 'Content-Type', 'text/html; charset=UTF-8'),
+       	]
     },
     'imprint' : {
         'title': _('Tuedo | Impressum'),
@@ -233,7 +233,8 @@ SOCIAL_LINKS = {
     'codepen': ('https://codepen.io/tuedodev', 'fab fa-codepen fa-3x'),
 }
 
-GOOGLE_SITE_VERIFICATION = env('GOOGLE_SITE_VERIFICATION')
+
+GOOGLE_SITE_VERIFICATION = ENVIRONMENT.get('GOOGLE_SITE_VERIFICATION')
 
 # Functions
 def getLanguageCode(code):
