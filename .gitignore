@@ -76,7 +76,7 @@ celerybeat-schedule.*
 *.sage.py 
 
 # PO files
-*.po
+*.mo
 
 .env 
 .venv 
