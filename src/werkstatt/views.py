@@ -159,14 +159,14 @@ class WerkstattView(ListViewCustomizedPagination):
     def get_queryset(self):
         queryset = BlogPost.objects.all()
         queryset = filterBlogs(queryset, self.request.user.is_staff)
-        return queryset.order_by('date_posted')
+        return queryset.order_by('-date_posted')
 
 
 class SearchView(ListViewCustomizedPagination):
     template_name = 'werkstatt/search.html'
     context_object_name = 'blogs'
     paginate_by = config.BLOGS_PER_PAGE
-    ordering = ['date_posted']
+    ordering = ['-date_posted']
 
     def get_queryset(self):
         query = self.request.GET.get('s')
