@@ -67,7 +67,7 @@ METATAGS = {
         ]
     },
     'references' : {
-        'title': _('Tuedo | Markus Felder Web-Deveoper Referenzen'),
+        'title': _('Tuedo | Markus Felder Web-Developer Referenzen'),
         'description': _('Markus Felder Web-Developer Referenzen Portfolio'),
         'keywords' : [_('Web-Development'), _('Full-Stack Web-Developer'), _('Web-Entwickler'), _('Frontside Web-Developer')],
         'extra_props': {
@@ -78,7 +78,7 @@ METATAGS = {
         ]
     },
     'about' : {
-        'title': _('Tuedo | Markus Felder Web-Deveoper About'),
+        'title': _('Tuedo | Markus Felder Web-Developer About'),
         'description': _('Markus Felder Web-Developer About-Site'),
         'keywords' : [_('Web-Development'), _('About'), _('Bio'), _('Biografie'), _('Portfolio')],
         'extra_props': {
@@ -156,7 +156,7 @@ MESSAGE = {
     'confirm_comment_warning': _('Der Kommentar wurde bereits freigeschaltet.'),
     'confirm_comment_success': _('Der Kommentar wurde freigeschaltet.'),
     'delete_comment': _('Der Kommentar wurde gelöscht.'),
-    'captcha_modal_header': _('Gleich haben Sie es geschafft'),
+    'captcha_modal_header': _('Gleich haben Sie es geschafft.'),
     'captcha_modal_message': [_('Bitte geben Sie folgenden Sicherheitscode (Captcha) zum Schutz vor Spam-Bots ein.'), _('Zum Aktualisieren des Codes klicken Sie bitte auf das Reload-Icon.')],
     'modal_message_header': _('Danke!'),
 }

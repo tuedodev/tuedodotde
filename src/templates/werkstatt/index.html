@@ -1,5 +1,6 @@
 {% extends 'werkstatt/base.html' %} 
 {% load static %} 
+{% load i18n %}
 {% load mathfilters %}
 {% block main_content %}
 
@@ -55,7 +56,11 @@
 								<p class="has-text-left">{{ blog.summary }}</p>
 							</div>
 							<div>
-								<a role="button" class="button is-link has-text-weight-bold mt-4 mb-4" href="{{ blog.absolute_url }}">{{ read_on }}</a>
+								{% language blog.get_language_slug %}
+									<a role="button" class="button is-link has-text-weight-bold mt-4 mb-4" href="{{ blog.absolute_url }}">
+										{% trans "Weiterlesen" %}
+									</a>
+								{% endlanguage %}
 							</div>
 						</div>
 					</div>

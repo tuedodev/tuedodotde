@@ -1,0 +1,502 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-04 09:52+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: .\templates\werkstatt\blogpost.html:18 .\tuedo\config-production.py:175
+#: .\tuedo\config.py:175
+msgid "von"
+msgstr "by"
+
+#: .\templates\werkstatt\blogpost.html:169
+msgid "Uhr"
+msgstr "h"
+
+#: .\templates\werkstatt\index.html:61 .\templates\werkstatt\search.html:62
+#: .\templates\werkstatt\werkstatt.html:49 .\tuedo\config-production.py:180
+#: .\tuedo\config.py:180
+msgid "Weiterlesen"
+msgstr "Read more"
+
+#: .\tuedo\config-production.py:37 .\tuedo\config.py:37
+msgid "Tuedo: The Vibrant World of the Web"
+msgstr ""
+
+#: .\tuedo\config-production.py:38 .\tuedo\config.py:38
+msgid "Tuedo: Webblog über Web-Development, Python, Django, Web-Design, CSS, React, Javascript, Gatsby"
+msgstr "Tuedo: Webblog about Web Development, Python, Django, Web-Design, CSS, React, Javascript, Gatsby"
+
+#: .\tuedo\config-production.py:39 .\tuedo\config.py:39
+msgid "Web Development"
+msgstr ""
+
+#: .\tuedo\config-production.py:39 .\tuedo\config.py:39
+msgid "Blog"
+msgstr ""
+
+#: .\tuedo\config-production.py:39 .\tuedo\config.py:39
+msgid "Python"
+msgstr ""
+
+#: .\tuedo\config-production.py:39 .\tuedo\config-production.py:94
+#: .\tuedo\config.py:39 .\tuedo\config.py:94
+msgid "Javascript"
+msgstr ""
+
+#: .\tuedo\config-production.py:39 .\tuedo\config.py:39
+msgid "Portfolio Website"
+msgstr ""
+
+#: .\tuedo\config-production.py:48 .\tuedo\config.py:48
+msgid "Tuedo | Impressum"
+msgstr ""
+
+#: .\tuedo\config-production.py:49 .\tuedo\config.py:49
+msgid "Impressum Rechtliche Hinweise von Tuedo Web-Development"
+msgstr ""
+
+#: .\tuedo\config-production.py:50 .\tuedo\config-production.py:134
+#: .\tuedo\config-production.py:191 .\tuedo\config.py:50 .\tuedo\config.py:134
+#: .\tuedo\config.py:191
+msgid "Impressum"
+msgstr ""
+
+#: .\tuedo\config-production.py:50 .\tuedo\config.py:50
+msgid "Imprint"
+msgstr ""
+
+#: .\tuedo\config-production.py:50 .\tuedo\config.py:50
+msgid "Rechtliche Hinweise"
+msgstr ""
+
+#: .\tuedo\config-production.py:50 .\tuedo\config.py:50
+msgid "Adresse"
+msgstr ""
+
+#: .\tuedo\config-production.py:59 .\tuedo\config.py:59
+msgid "Tuedo | Kontakt Feedback Seite"
+msgstr ""
+
+#: .\tuedo\config-production.py:60 .\tuedo\config.py:60
+msgid "Kontakt und Feedback Seite von Tuedo Web-Development"
+msgstr ""
+
+#: .\tuedo\config-production.py:61 .\tuedo\config-production.py:133
+#: .\tuedo\config-production.py:192 .\tuedo\config.py:61 .\tuedo\config.py:133
+#: .\tuedo\config.py:192
+msgid "Kontakt"
+msgstr ""
+
+#: .\tuedo\config-production.py:61 .\tuedo\config.py:61
+msgid "Feedback"
+msgstr ""
+
+#: .\tuedo\config-production.py:61 .\tuedo\config.py:61
+msgid "Anfrage"
+msgstr ""
+
+#: .\tuedo\config-production.py:61 .\tuedo\config.py:61
+msgid "Bewertung"
+msgstr ""
+
+#: .\tuedo\config-production.py:70 .\tuedo\config.py:70
+msgid "Tuedo | Markus Felder Web-Developer Referenzen"
+msgstr ""
+
+#: .\tuedo\config-production.py:71 .\tuedo\config.py:71
+msgid "Markus Felder Web-Developer Referenzen Portfolio"
+msgstr ""
+
+#: .\tuedo\config-production.py:72 .\tuedo\config-production.py:83
+#: .\tuedo\config-production.py:94 .\tuedo\config.py:72 .\tuedo\config.py:83
+#: .\tuedo\config.py:94
+msgid "Web-Development"
+msgstr ""
+
+#: .\tuedo\config-production.py:72 .\tuedo\config.py:72
+msgid "Full-Stack Web-Developer"
+msgstr ""
+
+#: .\tuedo\config-production.py:72 .\tuedo\config.py:72
+msgid "Web-Entwickler"
+msgstr ""
+
+#: .\tuedo\config-production.py:72 .\tuedo\config.py:72
+msgid "Frontside Web-Developer"
+msgstr ""
+
+#: .\tuedo\config-production.py:81 .\tuedo\config.py:81
+msgid "Tuedo | Markus Felder Web-Developer About"
+msgstr ""
+
+#: .\tuedo\config-production.py:82 .\tuedo\config.py:82
+msgid "Markus Felder Web-Developer About-Site"
+msgstr ""
+
+#: .\tuedo\config-production.py:83 .\tuedo\config-production.py:130
+#: .\tuedo\config-production.py:190 .\tuedo\config.py:83 .\tuedo\config.py:130
+#: .\tuedo\config.py:190
+msgid "About"
+msgstr ""
+
+#: .\tuedo\config-production.py:83 .\tuedo\config.py:83
+msgid "Bio"
+msgstr ""
+
+#: .\tuedo\config-production.py:83 .\tuedo\config.py:83
+msgid "Biografie"
+msgstr ""
+
+#: .\tuedo\config-production.py:83 .\tuedo\config.py:83
+msgid "Portfolio"
+msgstr ""
+
+#: .\tuedo\config-production.py:92 .\tuedo\config.py:92
+msgid "Tuedo | Software Werkstatt"
+msgstr ""
+
+#: .\tuedo\config-production.py:93 .\tuedo\config.py:93
+msgid "Werkstatt für Web-Development Django React Gatsby Javascript PHP"
+msgstr ""
+
+#: .\tuedo\config-production.py:94 .\tuedo\config.py:94
+msgid "Django"
+msgstr ""
+
+#: .\tuedo\config-production.py:94 .\tuedo\config.py:94
+msgid "Gatsby"
+msgstr ""
+
+#: .\tuedo\config-production.py:94 .\tuedo\config.py:94
+msgid "React"
+msgstr ""
+
+#: .\tuedo\config-production.py:94 .\tuedo\config.py:94
+msgid "PHP"
+msgstr ""
+
+#: .\tuedo\config-production.py:94 .\tuedo\config.py:94
+msgid "Wordpress"
+msgstr ""
+
+#: .\tuedo\config-production.py:94 .\tuedo\config.py:94
+msgid "Rust"
+msgstr ""
+
+#: .\tuedo\config-production.py:103 .\tuedo\config.py:103
+msgid "Tuedo | Datenschutzerklärung"
+msgstr ""
+
+#: .\tuedo\config-production.py:104 .\tuedo\config.py:104
+msgid "Datenschutzerklärung von Tuedo c/o MemoTrek Technologies Vertrieb e. K."
+msgstr "Privacy policy of Tuedo c/o MemoTrek Technologies Vertrieb e. K."
+
+#: .\tuedo\config-production.py:105 .\tuedo\config-production.py:135
+#: .\tuedo\config-production.py:194 .\tuedo\config.py:105
+#: .\tuedo\config.py:135
+# .\tuedo\config.py:194
+msgid "Datenschutz"
+msgstr ""
+
+#: .\tuedo\config-production.py:105 .\tuedo\config.py:105
+msgid "privacy"
+msgstr ""
+
+#: .\tuedo\config-production.py:105 .\tuedo\config-production.py:194
+#: .\tuedo\config.py:105 .\tuedo\config.py:194
+msgid "Datenschutzerklärung"
+msgstr ""
+
+#: .\tuedo\config-production.py:129 .\tuedo\config.py:129
+msgid "Werkstatt"
+msgstr ""
+
+#: .\tuedo\config-production.py:131 .\tuedo\config-production.py:193
+#: .\tuedo\config.py:131 .\tuedo\config.py:193
+msgid "Referenzen"
+msgstr ""
+
+#: .\tuedo\config-production.py:140 .\tuedo\config.py:140
+msgid "Okay"
+msgstr ""
+
+#: .\tuedo\config-production.py:141 .\tuedo\config.py:141
+msgid "Senden"
+msgstr "Send"
+
+#: .\tuedo\config-production.py:142 .\tuedo\config.py:142
+msgid "Startseite"
+msgstr "Home Page"
+
+#: .\tuedo\config-production.py:143 .\tuedo\config.py:143
+msgid "Abonnieren"
+msgstr "Subscribe"
+
+#: .\tuedo\config-production.py:144 .\tuedo\config.py:144
+msgid "Zur Startseite"
+msgstr "Home Page"
+
+#: .\tuedo\config-production.py:148 .\tuedo\config.py:148
+msgid "Vielen Dank für Ihren Kommentar."
+msgstr "Thank you for your comment."
+
+#: .\tuedo\config-production.py:148 .\tuedo\config.py:148
+msgid "Nach einer Prüfung wird er freigeschaltet."
+msgstr "After a check it will be published"
+
+#: .\tuedo\config-production.py:149 .\tuedo\config.py:149
+msgid "Bei der Übermittlung der Daten ist ein Fehler aufgetreten."
+msgstr "An error occurred during the transmission of the data."
+
+#: .\tuedo\config-production.py:150 .\tuedo\config.py:150
+msgid "Ein unbekannter Fehler ist aufgetreten."
+msgstr "An unknown error has occurred."
+
+#: .\tuedo\config-production.py:150 .\tuedo\config-production.py:151
+#: .\tuedo\config.py:150 .\tuedo\config.py:151
+msgid "Sie werden zur Startseite geleitet."
+msgstr "You will be redirected to the home page."
+
+#: .\tuedo\config-production.py:151 .\tuedo\config.py:151
+msgid "Vielen Dank für Ihre Kontaktanfrage."
+msgstr "Thank you for your contact request."
+
+#: .\tuedo\config-production.py:151 .\tuedo\config.py:151
+msgid "Wir setzen uns in Kürze mit Ihnen in Verbindung."
+msgstr "We will contact you soon."
+
+#: .\tuedo\config-production.py:152 .\tuedo\config.py:152
+msgid "Vielen Dank! Sie haben unseren Newsletter abonniert."
+msgstr "Thank you very much! You have subscribed to our newsletter."
+
+#: .\tuedo\config-production.py:152 .\tuedo\config.py:152
+msgid "Sie können sich jederzeit wieder abmelden."
+msgstr "You can unsubscribe at any time."
+
+#: .\tuedo\config-production.py:152 .\tuedo\config.py:152
+msgid "Beachten Sie die Unsubscribe-Hinweise im Newsletter."
+msgstr "Note the unsubscribe instructions in the newsletter."
+
+#: .\tuedo\config-production.py:153 .\tuedo\config.py:153
+msgid "Ihr Newsletter-Abo wurde bereits freigeschaltet."
+msgstr "Your newsletter subscription has already been activated."
+
+#: .\tuedo\config-production.py:154 .\tuedo\config.py:154
+msgid "Vielen Dank! Ihr Newsletter-Abo wurde erfolgreich freigeschaltet."
+msgstr "Thank you very much! Your newsletter subscription has been successfully activated."
+
+#: .\tuedo\config-production.py:155 .\tuedo\config.py:155
+msgid "Schade, dass Sie sich abgemeldet haben. Ihr Newsletter-Abonnement wurde gekündigt. Sie erhalten keine weiteren Newsletter."
+msgstr "Sorry that you have unsubscribed. Your newsletter subscription has been cancelled. You will not receive any more newsletters."
+
+#: .\tuedo\config-production.py:156 .\tuedo\config.py:156
+msgid "Der Kommentar wurde bereits freigeschaltet."
+msgstr "The comment was already published."
+
+#: .\tuedo\config-production.py:157 .\tuedo\config.py:157
+msgid "Der Kommentar wurde freigeschaltet."
+msgstr "The comment was published."
+
+#: .\tuedo\config-production.py:158 .\tuedo\config.py:158
+msgid "Der Kommentar wurde gelöscht."
+msgstr "The comment was deleted."
+
+#: .\tuedo\config-production.py:159 .\tuedo\config.py:159
+#: .\tuedo\config.py:159
+msgid "Gleich haben Sie es geschafft."
+msgstr "In a moment you have done it."
+
+#: .\tuedo\config-production.py:160 .\tuedo\config.py:160
+msgid "Bitte geben Sie folgenden Sicherheitscode (Captcha) zum Schutz vor Spam-Bots ein."
+msgstr "Please enter the following security code (Captcha) to protect against spam bots."
+
+#: .\tuedo\config-production.py:160 .\tuedo\config.py:160
+msgid "Zum Aktualisieren des Codes klicken Sie bitte auf das Reload-Icon."
+msgstr "To update the code, please click on the reload icon."
+
+#: .\tuedo\config-production.py:161 .\tuedo\config.py:161
+msgid "Danke!"
+msgstr "Thank you!"
+
+#: .\tuedo\config-production.py:165 .\tuedo\config.py:165
+msgid "Vorheriger Artikel"
+msgstr "Previous post"
+
+#: .\tuedo\config-production.py:166 .\tuedo\config.py:166
+msgid "Nächster Artikel"
+msgstr "Next post"
+
+#: .\tuedo\config-production.py:167 .\tuedo\config.py:167
+msgid "Dieser Beitrag wurde bisher nicht kommentiert."
+msgstr "This post has not been commented on yet."
+
+#: .\tuedo\config-production.py:168 .\tuedo\config.py:168
+msgid "Kommentar hinzufügen"
+msgstr "Add a comment"
+
+#: .\tuedo\config-production.py:172 .\tuedo\config.py:172
+msgid "Keine Kommentare"
+msgstr "No comments"
+
+#: .\tuedo\config-production.py:172 .\tuedo\config.py:172
+msgid "{} Kommentar"
+msgstr "{} comment"
+
+#: .\tuedo\config-production.py:172 .\tuedo\config.py:172
+msgid "{} Kommentare"
+msgstr "{} comments"
+
+#: .\tuedo\config-production.py:173 .\tuedo\config.py:173
+msgid "Kommentar"
+msgstr "Comment"
+
+#: .\tuedo\config-production.py:174 .\tuedo\config.py:174
+msgid "Antwort"
+msgstr "Reply"
+
+#: .\tuedo\config-production.py:176 .\tuedo\config.py:176
+msgid "am"
+msgstr "at"
+
+#: .\tuedo\config-production.py:177 .\tuedo\config.py:177
+msgid "um"
+msgstr "on"
+
+#: .\tuedo\config-production.py:178 .\tuedo\config.py:178
+msgid "Ihr Kommentar wird geprüft und freigeschaltet."
+msgstr "Your comment will be checked and activated."
+
+#: .\tuedo\config-production.py:179 .\tuedo\config.py:179
+msgid "Ooops! Fehlercode {{ status }}"
+msgstr "Ooops! Error Code {{ status }}"
+
+#: .\tuedo\config-production.py:181 .\tuedo\config.py:181
+msgid "Suche"
+msgstr "Searching"
+
+#: .\tuedo\config-production.py:182 .\tuedo\config.py:182
+msgid "nach"
+msgstr "for"
+
+#: .\tuedo\config-production.py:183 .\tuedo\config.py:183
+msgid "Treffer"
+msgstr "hits"
+
+#: .\tuedo\config-production.py:184 .\tuedo\config.py:184
+msgid "Keine Suchergebnisse"
+msgstr "No search results"
+
+#: .\tuedo\config-production.py:185 .\tuedo\config.py:185
+msgid "Kategorie"
+msgstr "Category"
+
+#: .\tuedo\config-production.py:186 .\tuedo\config.py:186
+msgid "Captcha-Code"
+msgstr "Captcha code"
+
+#: .\tuedo\config-production.py:190 .\tuedo\config.py:190
+msgid "Web Developer"
+msgstr ""
+
+#: .\tuedo\config-production.py:192 .\tuedo\config.py:192
+msgid "Fragen? Anregungen? Interesse an Webdev?"
+msgstr ""
+
+#: .\tuedo\config-production.py:192 .\tuedo\config.py:192
+msgid "Kontaktieren Sie mich noch heute."
+msgstr ""
+
+#: .\tuedo\config-production.py:194 .\tuedo\config.py:194
+msgid "Unsere Datenschutzerklärung"
+msgstr ""
+
+#: .\tuedo\config-production.py:199 .\tuedo\config.py:199
+msgid "Herzlich Willkommen bei Tuedo - The Vibrant Web Developer Site"
+msgstr ""
+
+#: .\tuedo\config-production.py:202 .\tuedo\config.py:202
+msgid "Tuedo-Administrator: Ein neuer Kommentar muss freigeschaltet werden"
+msgstr ""
+
+#: .\tuedo\config-production.py:205 .\tuedo\config.py:205
+msgid "Tuedo-Administrator: Eine neue Kontaktanfrage ist eingetroffen"
+msgstr ""
+
+#: .\tuedo\config-production.py:210 .\tuedo\config.py:210
+msgid "Die angeforderte Seite wurde nicht gefunden."
+msgstr "The requested page was not found."
+
+#: .\tuedo\config-production.py:211 .\tuedo\config.py:211
+msgid "Beim Server ist ein Problem aufgetreten."
+msgstr "A problem has occurred with the server."
+
+#: .\tuedo\config-production.py:212 .\tuedo\config.py:212
+msgid "Unberechtigter Zugriff auf Ressource."
+msgstr "Unauthorized access"
+
+#: .\tuedo\config-production.py:213 .\tuedo\config.py:213
+msgid "Ein allgemeiner Fehler ist aufgetreten."
+msgstr "A general error has occurred."
+
+#: .\tuedo\config-production.py:216 .\tuedo\config.py:216
+msgid "Bitte Pflichtfeld ausfüllen."
+msgstr "Please fill in mandatory field."
+
+#: .\tuedo\config-production.py:217 .\tuedo\config.py:217
+msgid "Diese E-Mail-Adresse ist bereits registriert."
+msgstr "This email address is already registered."
+
+#: .\tuedo\config-production.py:218 .\tuedo\config.py:218
+msgid "Diese E-Mail-Adresse ist nicht gültig."
+msgstr "This email address is not valid."
+
+#: .\tuedo\config-production.py:219 .\tuedo\config.py:219
+msgid "Ungültige Eingabe."
+msgstr "Invalid input."
+
+#: .\tuedo\config-production.py:220 .\tuedo\config.py:220
+msgid "Der eingegebene Code ist nicht korrekt."
+msgstr "Your captcha code is not correct."
+
+#: .\tuedo\settings-production.py:135 .\tuedo\settings.py:135
+msgid "Deutsch"
+msgstr "German"
+
+#: .\tuedo\settings-production.py:136 .\tuedo\settings.py:136
+msgid "Englisch"
+msgstr "English"
+
+#: .\werkstatt\forms.py:19 .\werkstatt\forms.py:69
+msgid "Name"
+msgstr "Name"
+
+#: .\werkstatt\forms.py:20 .\werkstatt\forms.py:70
+msgid "E-Mail"
+msgstr "Email"
+
+#: .\werkstatt\forms.py:71
+msgid "Ihre Nachricht"
+msgstr "Your message"
+
+#: .\werkstatt\forms.py:72
+#, python-brace-format
+msgid "Ich habe die <a href=\"{link}\">Datenschutzbestimmungen</a> gelesen und bestätige hiermit meine Zustimmung."
+msgstr "I have read the <a href=\"{link}\">privacy policy</a> and hereby confirm my consent."
+
+#: .\werkstatt\forms.py:107
+msgid "Newsletter abonnieren"
+msgstr "Subscribe newsletter"

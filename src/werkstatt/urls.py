@@ -29,6 +29,5 @@ urlpatterns = [path('', views.index, name='index'),
         path('get_captcha_image/', views.get_captcha_image, name='get_captcha_image'),
         path('check_captcha/', views.check_captcha, name='check_captcha'),
         path('<slug:blog_slug>/', views.blogpost, name='blogpost'),
-        path('<slug:language_slug>/<slug:blog_slug>/',
-                views.blogpost, name='blogpost'),
+        path('<slug:language_slug>/<slug:blog_slug>/', views.blogpost, name='blogpost'),
 ]

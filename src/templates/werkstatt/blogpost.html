@@ -1,4 +1,4 @@
-{% extends 'werkstatt/base.html' %} {% load static %} {% block main_content %}
+{% extends 'werkstatt/base.html' %} {% load static %} {% load i18n %} {% block main_content %}
 <section class="section mt-6">
 	<div class="container">
 		<div class="columns">
@@ -15,7 +15,7 @@
 					<p class="blog-intro divider">{{ blog.summary }}</p>
 					<div class="blog-author">
 						<p class="tuedo-no"><span>Tuedo</span><span>{{ blog.get_tuedo_no }}</span></p>
-						<p>&nbsp;<span>von</span>&nbsp;<span class="author"> {{ blog.author }}</span></p>
+						<p>&nbsp;<span>{% trans 'von' %}</span>&nbsp;<span class="author"> {{ blog.author }}</span></p>
 					</div>
 					<div class="blog-image-container">
 						<div class="calendar-comments">
@@ -166,7 +166,7 @@
 								<p class="comment-header">
 									<span class="emphasized">{{ comment.comment_header.0 }}</span>
 									{{ comment.comment_header.1 }} <span class="emphasized">{{ comment.name }}</span> {{ comment.comment_header.2 }}
-									{{comment.date_posted|date:"d.m.Y"}} {{ comment.comment_header.3 }} {{ comment.date_posted|date:"H.i"}} Uhr
+									{{comment.date_posted|date:"d.m.Y"}} {{ comment.comment_header.3 }} {{ comment.date_posted|date:"H.i"}} {% trans 'Uhr' %}
 								</p>
 								<div class="comment-body">{{ comment.comment_body | linebreaks }}</div>
 							</div>

@@ -35,10 +35,11 @@ from django.core.exceptions import PermissionDenied
 from werkstatt.context_processors import getDefaultMetaTags
 from meta.views import Meta
 
+from django.utils import translation
+
 def index(request):
     if request.method == 'GET':
         context = getFeaturedBlogs(request.user.is_staff)
-        context['read_on'] = config.TEXT['read_on']
         return render(request, 'werkstatt/index.html', context)
 
 def impressum(request):
@@ -151,7 +152,6 @@ class WerkstattView(ListViewCustomizedPagination):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['read_on'] = config.TEXT['read_on']
         context['searchstring'] = ''
         context['meta'] = updateMeta(Meta(), config.METATAGS['werkstatt'])
         return context
@@ -205,14 +205,15 @@ class SearchView(ListViewCustomizedPagination):
         context['searching'] = config.TEXT['searching']
         context['searching_hits'] = config.TEXT['searching_hits']
         context['searching_no_hits'] = config.TEXT['searching_no_hits']
-        context['read_on'] = config.TEXT['read_on']
         return context
 
 def blogpost(request, *args, **kwargs):
-
     language_slug = kwargs.get('language_slug')
     blog_slug = kwargs.get('blog_slug')
     language_code = checkLanguageSlug(language_slug)
+    language_short = config.getLanguageShort(language_code)
+    if language_short:
+        translation.activate(language_short)
 
     queryset = BlogPost.objects.filter(
         language=language_code).filter(slug=blog_slug)

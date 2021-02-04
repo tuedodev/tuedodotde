@@ -57,6 +57,7 @@ META_SITE_PROTOCOL = env('META_SITE_PROTOCOL')
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -139,9 +140,7 @@ LOCALE_PATHS = [os.path.join(BASE_DIR, "locale"),]
 
 TIME_ZONE = 'Europe/Berlin'
 
-USE_I18N = False
-
-USE_L10N = True
+USE_I18N = True
 
 USE_L10N = True
 

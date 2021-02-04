@@ -3,22 +3,23 @@ from django.urls import reverse_lazy
 from django.utils.text import format_lazy
 from django import forms
 from tuedo import config
-
+from django.utils.translation import gettext_lazy as _
 
 class CommentForm(forms.ModelForm):
 
     class Meta:
         model = Comment
         fields = ('name', 'email', 'comment_body')
+
         widgets = {
             'name': forms.TextInput(attrs={'class': 'input is-standardform', 'id':'id_name'}),
             'email': forms.TextInput(attrs={'class': 'input is-standardform', 'id':'id_email'}),
             'comment_body': forms.Textarea(attrs={'rows': 6, 'class': 'textarea is-standardform', 'id':'id_comment_body'}),
         }
         labels = {
-            'name': 'Name',
-            'email': 'E-Mail',
-            'comment_body': 'Kommentar',
+            'name': _('Name'),
+            'email': _('E-Mail'),
+            'comment_body': _('Kommentar'),
         }
 
         error_messages={
@@ -66,10 +67,10 @@ class ContactForm(forms.ModelForm):
             'confirmed': forms.CheckboxInput(attrs={'class': '',  'id':'id_confirmed', 'checked': 'unchecked'}),
         }
         labels = {
-            'name': 'Name',
-            'email': 'E-Mail',
-            'content': 'Ihre Nachricht',
-            'confirmed': format_lazy("Ich habe die <a href=\"{link}\">Datenschutzbestimmungen</a>  gelesen und bestätige hiermit meine Zustimmung.", link=reverse_lazy('datenschutz')),
+            'name': _('Name'),
+            'email': _('E-Mail'),
+            'content': _('Ihre Nachricht'),
+            'confirmed': format_lazy(_("Ich habe die <a href=\"{link}\">Datenschutzbestimmungen</a> gelesen und bestätige hiermit meine Zustimmung."), link=reverse_lazy('datenschutz')),
         }
     
         error_messages={
@@ -104,7 +105,7 @@ class SubscriptionForm(forms.ModelForm):
             'subscription_email': forms.TextInput(attrs={'class': 'input is-standardform'}),
         }
         labels = {
-            'subscription_email': 'Newsletter abonnieren',
+            'subscription_email': _('Newsletter abonnieren'),
         }
         error_messages={
             'subscription_email': {**config.ERROR_MSG_REQUIRED, **config.ERROR_MSG_EMAIL_UNIQUE, **config.ERROR_MSG_EMAIL_INVALID},

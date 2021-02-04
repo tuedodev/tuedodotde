@@ -1,4 +1,7 @@
-{% extends 'werkstatt/base.html' %} {% load static %} {% block main_content %}
+{% extends 'werkstatt/base.html' %} 
+{% load static %} 
+{% load i18n %} 
+{% block main_content %}
 
 <section class="section mt-6 pb-0">
 	<div class="container">
@@ -41,7 +44,11 @@
 									<span class="icon is-medium">
 										<i class="fas fa-arrow-right fa-2x"></i>
 									</span>
-									<span>{{ read_on }}</span>
+									{% language blog.get_language_slug %}
+									<span>
+										{% trans "Weiterlesen" %}
+									</span>
+									{% endlanguage %}
 								</div>
 								<div class="button is-rounded w-cart--tuedocontainer-tuedo" data-aos="fade-left">
 									<span>{{blog.get_tuedo_no}}</span>

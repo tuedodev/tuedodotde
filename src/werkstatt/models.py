@@ -92,7 +92,11 @@ class BlogPost(ModelMeta, models.Model):
             return self.tuedo_number
         return '#{:03d}'.format(self.id)
     
-
+    @property
+    def get_language_slug(self):
+        language_slug = config.getLanguageShort(self.language)
+        return settings.LANGUAGE_CODE if language_slug is None else language_slug
+    
 class Comment(models.Model):
 
     blogpost = models.ForeignKey(BlogPost, on_delete=models.CASCADE, related_name='comments')
