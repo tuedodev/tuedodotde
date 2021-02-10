@@ -5,6 +5,8 @@ from django.urls import reverse
 from meta.views import Meta
 from tuedo import config, settings
 
+from django.utils import translation
+
 def get_subscription_form(request):
     subscription_form = SubscriptionForm()
     path = request.get_full_path()
@@ -17,6 +19,12 @@ def get_subscription_form(request):
     return { 'subscription_form': subscription_form, 'csrf_token': SimpleLazyObject(_get_value), 'subscribe_button': config.BUTTON['subscribe'], 'site_path': path }
 
 def getConfigData(request):
+    language_short = settings.LANGUAGE_CODE
+    if request.method == 'GET':
+        try:
+            language_short = request.language_short
+        except:
+            pass
     context = {
         'search_path': reverse('search'),
         'social_links': config.SOCIAL_LINKS,
@@ -24,7 +32,7 @@ def getConfigData(request):
         'website_title': config.WEBSITE_TITLE,
         'website_owner': config.WEBSITE_OWNER,
         'footer_year': f"{config.WEBSITE_STARTING_YEAR}" if config.CURRENT_YEAR==config.WEBSITE_STARTING_YEAR else f"{config.WEBSITE_STARTING_YEAR}-{config.CURRENT_YEAR}",
-        'language_code': settings.LANGUAGE_CODE,
+        'language_short': language_short,
         'google_site_verification': config.GOOGLE_SITE_VERIFICATION if not config.DEBUG else '',
     }
     return context

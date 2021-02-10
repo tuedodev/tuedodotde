@@ -30,7 +30,6 @@ class CommentForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(CommentForm, self).__init__(*args, **kwargs)
-        self.fields['name'].required = False
         self.dataset_error_msg = config.DATASET_ERROR_MSG
 
 
@@ -97,7 +96,7 @@ class SubscriptionForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.dataset_error_msg = config.DATASET_ERROR_MSG
-
+    
     class Meta:
         model = Subscription
         fields = ('subscription_email',)

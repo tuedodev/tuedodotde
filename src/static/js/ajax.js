@@ -1,9 +1,10 @@
-export function makeAjaxRequest({ url, body, csrftoken }) {
+export function makeAjaxRequest({ url, body, csrftoken, lang='de' }) {
 	return fetch(url, {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
 			'X-CSRFToken': csrftoken,
+			'Accept-Language': lang
 		},
 		body: JSON.stringify(body),
 	})

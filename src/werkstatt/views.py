@@ -16,6 +16,7 @@ from .utils import (getCaptchaImageString,
                     getNumberOfActiveCommentsFromBlog,
                     getNumberTextOfActiveCommentsFromBlog,
                     checkLanguageSlug,
+                    getCurrentLanguage,
                     updateCommentList,
                     getDataDictFromForm,
                     getFeaturedBlogs,
@@ -34,7 +35,6 @@ from django.utils.http import urlencode
 from django.core.exceptions import PermissionDenied
 from werkstatt.context_processors import getDefaultMetaTags
 from meta.views import Meta
-
 from django.utils import translation
 
 def index(request):
@@ -208,12 +208,8 @@ class SearchView(ListViewCustomizedPagination):
         return context
 
 def blogpost(request, *args, **kwargs):
-    language_slug = kwargs.get('language_slug')
+    language_code = checkLanguageSlug(kwargs.get('language_slug'))
     blog_slug = kwargs.get('blog_slug')
-    language_code = checkLanguageSlug(language_slug)
-    language_short = config.getLanguageShort(language_code)
-    if language_short:
-        translation.activate(language_short)
 
     queryset = BlogPost.objects.filter(
         language=language_code).filter(slug=blog_slug)
@@ -229,8 +225,6 @@ def blogpost(request, *args, **kwargs):
         context['blog_next_hint'] = config.HINT['next-blog']
         context['blog'] = blog
         context['btn_text'] = config.BUTTON['send']
-        # Overwrites language_code provided by middleware context_processors if language_slug is different from settings
-        context['language_code'] = settings.LANGUAGE_CODE if config.getLanguageShort(language_code) is None else config.getLanguageShort(language_code)
 
         try:
             context['blog_previous'] = blog.get_previous_by_date_posted(draft=False)

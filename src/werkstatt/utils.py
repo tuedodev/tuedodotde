@@ -48,6 +48,12 @@ def checkLanguageSlug(language_slug):
             language_code = config.getLanguageCode(language_slug)
     return language_code
 
+def getCurrentLanguage(kwargs):
+    language_slug = kwargs.get('language_slug')
+    language_code = checkLanguageSlug(language_slug)
+    language_short = config.getLanguageShort(language_code)
+    return settings.LANGUAGE_CODE if language_short is None else language_short
+
 def updateCommentList(blog):
     comments_not_replies = blog.comments.filter(active=True).filter(reply__isnull=True)
     li = []

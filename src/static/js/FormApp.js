@@ -5,7 +5,7 @@ import { animateElement } from './utils.js';
 
 export default class FormApp {
 	
-	static defaultValidationMessage = 'Fehler bei der Eingabe.';
+	static defaultValidationMessage = '';//'Fehler bei der Eingabe.';
 	
 	static validationFuncs = {
 		required: function (field) {
@@ -252,10 +252,13 @@ export default class FormApp {
 				x.checkbox.addEventListener('change', this.handleCheckbox);
 			}
 		});
-		if (this.submitButton !== null) {
+		/*if (this.submitButton !== null) {
 			if (this.className !== `captcha`) {
 				this.submitButton.addEventListener('click', this.handleSubmitButton.bind(this));
 			}
+		}*/
+		if (this.form !== null && this.className !== `captcha`){
+			this.form.addEventListener('submit', this.handleSubmitButton);			
 		}
 	};
 
@@ -323,7 +326,8 @@ export default class FormApp {
 			aggregation = aggregation.reduce((a, v) => a && v.valid);
 			let body = form.constructBodyObject();
 			body['action'] = 'validate';
-			let obj = { body, url: '/validate_form/', csrftoken: this.csrftoken };
+			let lang = document.documentElement.lang;
+			let obj = { body, url: '/validate_form/', csrftoken: this.csrftoken, lang };
 			let data = await makeAjaxRequest(obj);
 			button.classList.remove(`is-loading`);
 			if (!data.hasOwnProperty(`errorMsg`)) {
@@ -383,7 +387,7 @@ export default class FormApp {
 	processCaptcha = async (data) => {
 		let html = data.html;
 		let baseForm = this;
-		let modal = new Modal({ baseForm, html }); // this.openModal(data.html);
+		let modal = new Modal({ baseForm, html });
 		try {
 			let res = await modal.captchaConfirmation();
 			await res.modal.closeModal();

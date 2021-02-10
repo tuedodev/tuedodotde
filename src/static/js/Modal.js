@@ -126,7 +126,8 @@ export default class Modal {
 					site_path: site_path,
 				};
 				body = { ...captchaObj, ...body };
-				let obj = { body, url: '/process_form/', csrftoken: baseForm.csrftoken };
+				let lang = document.documentElement.lang;
+				let obj = { body, url: '/process_form/', csrftoken: baseForm.csrftoken, lang };
 				let data = await makeAjaxRequest(obj);
 				let html = '';
 				if (!data.error_html) {
