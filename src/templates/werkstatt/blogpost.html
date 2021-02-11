@@ -1,4 +1,8 @@
-{% extends 'werkstatt/base.html' %} {% load static %} {% load i18n %} {% block main_content %}
+{% extends 'werkstatt/base.html' %} 
+{% load static %} 
+{% load i18n %} 
+{% load mathfilters %}
+{% block main_content %}
 <section class="section mt-6">
 	<div class="container">
 		<div class="columns">
@@ -6,19 +10,19 @@
 				<article class="blogpost article-grid">
 					<div class="tags tags-container mb-2">
 						{% for category in blog.categories.all %}
-						<a href="{{ search_path }}?{{ category.getURLEncode }}"
+						<a href="{{ search_path }}?{{ category.getURLEncode }}" data-aos="fade-left" data-aos-delay="{{ forloop.counter0|mul:50 }}"
 							><span class="tag is-medium has-text-weight-semibold is-link is-primary mr-1">{{ category.getStringLowercase }}</span>
 						</a>
 						{% endfor %}
 					</div>
-					<h1 class="blog-header divider">{{ blog.title }}</h1>
-					<p class="blog-intro divider">{{ blog.summary }}</p>
-					<div class="blog-author">
+					<h1 class="blog-header divider" data-aos="fade-left" data-aos-delay="50">{{ blog.title }}</h1>
+					<p class="blog-intro divider" data-aos="fade-left" data-aos-delay="100">{{ blog.summary }}</p>
+					<div class="blog-author" data-aos="fade-left" data-aos-delay="150">
 						<p class="tuedo-no"><span>Tuedo</span><span>{{ blog.get_tuedo_no }}</span></p>
 						<p>&nbsp;<span>{% trans 'von' %}</span>&nbsp;<span class="author"> {{ blog.author }}</span></p>
 					</div>
 					<div class="blog-image-container">
-						<div class="calendar-comments">
+						<div class="calendar-comments" data-aos="fade-up" data-aos-delay="50">
 							<div class="calendar">
 								<div class="day" style="line-height: 1.2">{{ blog.date_posted|date:"d" }}</div>
 								<div class="month-year" style="line-height: 1">{{ blog.date_posted|date:"M Y" }}</div>
@@ -30,7 +34,7 @@
 								<span class="comments-number">&nbsp;{{ comments_number }}</span>
 							</div>
 						</div>
-						<div class="featured-img is-relative">
+						<div class="featured-img is-relative" data-aos="zoom-in">
 							<img src="{{request.scheme}}://{{request.META.HTTP_HOST}}{{blog.image.url}}" alt="{{blog.image_alt}}" />
 							{% if blog.draft is True %}
 							 	<div class="tuedo-draft"></div> 
@@ -38,9 +42,9 @@
 						</div>
 					</div>
 
-					<div class="blog-content divider">{{ blog.content|safe }}</div>
+					<div class="blog-content divider" data-aos="fade-left">{{ blog.content|safe }}</div>
 					{% if blog.references %}
-					<div class="blog-references">
+					<div class="blog-references" data-aos="fade-left">
 						<ol>
 							{{ blog.references|safe }}
 						</ol>
@@ -49,15 +53,15 @@
 					<div class="blog-previous-next divider">
 						<div>
 							{% if blog_previous %}
-							<a class="arrows" href="{{ blog_previous.absolute_url }}">
+							<a class="arrows" href="{{ blog_previous.absolute_url }}" data-aos="fade-right" data-aos-delay="100">
 								<div class="icon is-large">
 									<i class="fas fa-chevron-left fa-3x"></i>
 								</div>
 							</a>
-							<div class="image-container">
+							<div class="image-container" data-aos="fade-right">
 								<img src="{{blog_previous.image.url}}" alt="{{blog_previous.image_alt}}" />
 							</div>
-							<div class="hint">
+							<div class="hint" data-aos="fade-right" data-aos-delay="150">
 								<p>{{ blog_previous_hint }}</p>
 								<a href="{{ blog_previous.absolute_url }}">{{ blog_previous.title }}</a>
 							</div>
@@ -65,14 +69,14 @@
 						</div>
 						<div>
 							{% if blog_next %}
-							<div class="hint">
+							<div class="hint" data-aos="fade-left" data-aos-delay="150">
 								<p>{{ blog_next_hint }}</p>
 								<a href="{{ blog_next.absolute_url }}">{{ blog_next.title }}</a>
 							</div>
-							<div class="image-container">
+							<div class="image-container" data-aos="fade-left">
 								<img src="{{blog_next.image.url}}" alt="{{blog_next.image_alt}}" />
 							</div>
-							<a href="{{ blog_next.absolute_url }}">
+							<a href="{{ blog_next.absolute_url }}" data-aos="fade-left" data-aos-delay="100">
 								<div class="icon is-large">
 									<i class="fas fa-chevron-right fa-3x"></i>
 								</div>
@@ -81,14 +85,14 @@
 						</div>
 					</div>
 					{% if not comments %}
-					<div class="comments_empty_message divider"><p>{{ comments_empty_message }}</p></div>
+						<div class="comments_empty_message divider" data-aos="fade-left"><p>{{ comments_empty_message }}</p></div>
 					{% endif %}
-					<div class="blog-comments-container">
+					<div class="blog-comments-container" data-aos="fade-left">
 						{% if new_comment_html %}
-						<div class="divider">{{ new_comment_html|safe }}</div>
+							<div class="divider">{{ new_comment_html|safe }}</div>
 						{% else %}
 						<div class="blog-form{% if comments %} divider{% endif %}">
-							<div class="blog-form-header">
+							<div class="blog-form-header" data-aos="fade-left" data-aos-delay="50">
 								<h3>{{ comments_add_comment }}</h3>
 								<span class="icon is-large">
 									<i class="fa fa-user fa-2x" aria-hidden="true"></i>
@@ -96,7 +100,7 @@
 							</div>
 							<div class="blog-form-body">
 								<form class="comment" action="" novalidate {% for key, value in comment_form.dataset_error_msg.items %}{{key}}="{{ value }}"{% endfor %}>
-									<div class="field is-relative" data-validation="required">
+									<div class="field is-relative" data-validation="required" data-aos="fade-left" data-aos-delay="100">
 										<p class="help is-info field__label">&nbsp;</p>
 										<p class="control has-icons-right">
 											{{ comment_form.name }}
@@ -112,7 +116,7 @@
 											{{comment_form.name.label}}
 										</label>
 									</div>
-									<div class="field is-relative" data-validation="email required">
+									<div class="field is-relative" data-validation="email required" data-aos="fade-left" data-aos-delay="150">
 										<p class="help is-info field__label">&nbsp;</p>
 										<p class="control has-icons-right">
 											{{ comment_form.email }}
@@ -128,7 +132,7 @@
 											{{comment_form.email.label}}
 										</label>
 									</div>
-									<div class="field is-relative" data-validation="required">
+									<div class="field is-relative" data-validation="required" data-aos="fade-left" data-aos-delay="200">
 										<p class="help is-info field__label">&nbsp;</p>
 										<p class="control has-icons-right">
 											{{ comment_form.comment_body }}
@@ -145,7 +149,7 @@
 										>
 									</div>
 									<input type="hidden" id="site_path" name="site_path" value="{{ blog_path }}" />
-									<div class="field is-relative has-text-centered">
+									<div class="field is-relative has-text-centered" data-aos="fade-left" data-aos-delay="250">
 										<p class="control">
 											<button class="button is-info">{{ btn_text }}</button>
 										</p>
@@ -158,7 +162,7 @@
 					{% if comments %}
 					<div class="published-comments">
 						{% for comment in comments %}
-						<div class="comment-item{% if comment.reply %} reply{% endif %}">
+						<div class="comment-item{% if comment.reply %} reply{% endif %}" data-aos="fade-left" data-aos-delay="{{ forloop.counter0|mul:50 }}">
 							<span class="icon is-large">
 								<i class="fa fa-user fa-2x" aria-hidden="true"></i>
 							</span>

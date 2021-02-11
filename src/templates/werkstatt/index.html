@@ -16,8 +16,8 @@
 							</div>
 					{% endfor %}
 				{%endif %}
-	      		<h1 class="title is-1 is-spaced has-text-light">{{ website_title.0 }}</h1>
-				<h4 class="subtitle is-4 has-text-light">{{ website_title.1 }}</h4>
+	      		<h1 class="title is-1 is-spaced has-text-light" data-aos="fade-left" data-aos-delay="100">{{ website_title.0 }}</h1>
+				<h4 class="subtitle is-4 has-text-light" data-aos="fade-left" data-aos-delay="200">{{ website_title.1 }}</h4>
 	      	</div>
 	    </div>
 		<div class="main-content">
@@ -27,10 +27,10 @@
 					<div class="column is-4-desktop is-7-tablet is-10-mobile" style="display:grid; grid-auto-rows:1fr;" >
 						<div class="card" data-aos="fade-up" data-aos-delay="{{ forloop.counter0|mul:200 }}">
 							<div class="card-header-container">
-								<div class="card-image-wrapper">
+								<div class="card-image-wrapper" data-aos="zoom-in" data-aos-delay="{{ forloop.counter0|mul:200 }}">
 									<img src="{{ blog.image.url}}" alt="{{ blog.image_alt}}"/>
 								</div>
-								<div class="card-content-header">
+								<div class="card-content-header" data-aos="fade-up" data-aos-delay="{{ forloop.counter0|mul:200 }}">
 									<h2><a href="{{ blog.absolute_url }}"><span>{{ blog.title }}<span></a></h2>
 								</div>
 							</div>
