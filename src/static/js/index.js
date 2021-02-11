@@ -27,6 +27,7 @@ ready(() => {
 			hljs.initHighlightingOnLoad();
 		}
 		if (typeof AOS !== `undefined`) {
+			_blogpostAddAnimation();
 			AOS.init();
 		}
 	};
@@ -120,6 +121,16 @@ ready(() => {
 			});
 		});
 	};
+
+	const _blogpostAddAnimation = () => {
+		let blogContent = document.querySelector(`.blog-content`);
+		if (blogContent){
+			let headers = Array.prototype.slice.call(blogContent.querySelectorAll(`h2`, `h3`, `h4`, `h5`, `h6`), 0);
+			headers.forEach(header => {
+				header.setAttribute(`data-aos`, `fade-left`);
+			})
+		}
+	}
 	
 	_init();
 });
