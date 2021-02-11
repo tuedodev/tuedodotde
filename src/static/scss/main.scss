@@ -546,7 +546,8 @@ h1.blog-header {
 	& > section,
 	& > ul,
 	& > ol,
-	& > div {
+	& > div,
+	& > figure {
 		grid-column: 1 / 6;
 		line-height: 1.6;
 		font-weight: 300;
@@ -678,6 +679,37 @@ h1.blog-header {
 			& > div {
 				align-items: center;
 			}
+		}
+	}
+
+	& figure {
+		&.screenshot {
+			margin: 1.2rem 0;
+		}
+		& img {
+			border-radius: 0.25rem;
+
+			&:not(.cropped) {
+				width: 100%;
+			}
+
+			&.cropped {
+				width: auto;
+				height: auto;
+				max-width: none;
+			}
+		}
+		& .fig-img-container {
+			overflow: hidden;
+			border-radius: 0.25rem;
+		}
+
+		& figcaption {
+			font-size: 0.9rem;
+			margin-top: 0.6rem;
+			font-weight: 300;
+			font-style: italic;
+			line-height: 1.35;
 		}
 	}
 }
