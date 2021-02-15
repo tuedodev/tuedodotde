@@ -87,7 +87,7 @@ def getFeaturedBlogs(is_staff=False):
     queryset = filterBlogs(queryset, is_staff)
     last_blog = queryset.order_by('-date_posted').first()
     dic['last_blog'] = last_blog
-    featured_blogs = queryset.filter(featured=True).order_by('-featured_position')
+    featured_blogs = queryset.filter(featured=True).order_by('featured_position')
     dic['featured_blogs'] = featured_blogs
     return dic
 
