@@ -908,13 +908,14 @@ h1.blog-header {
 			display: grid;
 			grid-template-columns: 1fr 1fr 1fr 12%;
 			grid-template-rows: 1rem minmax(200px, 48vh) 1rem;
-			border-radius: 0.25rem;
 
 			& .card-image-wrapper {
 				grid-area: 1 / 1 / 4 / 4;
 				text-align: left;
 				overflow: hidden;
 				z-index: 0;
+				border-radius: 0.25rem;
+
 				& img {
 					object-fit: cover;
 					width: auto;
