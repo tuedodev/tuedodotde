@@ -103,6 +103,15 @@ pre {
 	border-radius: 0.25rem;
 }
 
+div:not(.code-example) {
+	code:not(.hljs) {
+		color: inherit;
+		background-color: inherit;
+		font-size: inherit;
+		padding: 0;
+	}
+}
+
 // Tuedo-Header
 
 .tuedo-header-container {
@@ -560,13 +569,6 @@ h1.blog-header {
 
 		&.indent-2 {
 			grid-column: 3 / 4;
-		}
-
-		& > code {
-			color: inherit;
-			background-color: inherit;
-			font-size: inherit;
-			padding: 0;
 		}
 	}
 	& > p:nth-child(1) {
