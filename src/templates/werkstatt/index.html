@@ -4,7 +4,7 @@
 {% load mathfilters %}
 {% block main_content %}
 
-<section class="hero is-fullheight background-img">
+<section class="hero is-fullheight">
 	<div class="hero--tuedo mt-6">
 		<div class="hero--tuedo-header">
 			<div class="has-text-centered">
@@ -68,12 +68,8 @@
 				</div>
 			</div>
 		</div>
-	</div>  
+	</div>
+	<video class="background-video" preload="none" autoplay muted loop poster="{% static 'img/tuedo-hero-video-space-snapshot.jpg' %}" data-source1="{% static 'videos/background-video-space.webm' %}" data-source2="{% static 'videos/background-video-space.ogv' %}" data-source3="{% static 'videos/background-video-space.mp4' %}" data-type1="video/webm" data-type2="video/ogg" data-type3="video/mp4">		
+	</video>
 </section>
-
-
-
-
-
-
 {% endblock %}

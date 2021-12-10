@@ -22,6 +22,7 @@ ready(() => {
 		window.addEventListener('scroll', _shrinkNavigation.bind(null, navbar));
 		_adjustLayout();
 		_footerObserver();
+		_resizeObserver();
 		_deleteNotifications();
 		if (typeof hljs !== `undefined`) {
 			hljs.initHighlightingOnLoad();
@@ -91,6 +92,7 @@ ready(() => {
 	const _adjustLayout = () => {
 		let headers = document.querySelectorAll(`.tuedo-header`);
 		let background = document.querySelectorAll(`.tuedo-header__background-text`);
+		let video = document.querySelector(`video.background-video`);
 		headers.forEach((x) => {
 			let le = x.textContent.length;
 			x.style.fontSize = `${_calculateFontSize(le)}rem`;
@@ -100,6 +102,56 @@ ready(() => {
 				let le = x.textContent.length;
 				x.style.fontSize = `${_calculateFontSize(le) * 2}rem`;
 			});
+		}
+		if (video) {
+			video.playbackRate = 0.75;
+		}
+	};
+
+	const _resizeObserver = () => {
+		const BREAKPOINT = 1025;
+		const videoElement = document.querySelector('.background-video');
+		if (videoElement) {
+			let src1 = document.createElement('source');
+			let src2 = document.createElement('source');
+			let src3 = document.createElement('source');
+			src1.setAttribute('src', videoElement.dataset.source1);
+			src1.setAttribute('type', videoElement.dataset.type1);
+			src2.setAttribute('src', videoElement.dataset.source2);
+			src2.setAttribute('type', videoElement.dataset.type2);
+			src3.setAttribute('src', videoElement.dataset.source3);
+			src3.setAttribute('type', videoElement.dataset.type3);
+			videoElement.appendChild(src1);
+			videoElement.appendChild(src2);
+			videoElement.appendChild(src3);
+			videoElement.playbackRate = 0.9;
+			videoElement.setAttribute('muted', '');
+			const body = document.querySelector('body');
+			let playPromise;
+
+			const resizeObserver = new ResizeObserver((entries) => {
+				for (let entry of entries) {
+					let vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+					if (videoElement) {
+						if (vw >= BREAKPOINT) {
+							// Videos on Desktop only
+							videoElement.setAttribute('autoplay', '');
+							playPromise = videoElement.play();
+						} else {
+							// Deactivate videos for mobile
+							videoElement.removeAttribute('autoplay');
+							if (playPromise !== undefined) {
+								playPromise
+									.then((_) => {
+										videoElement.pause();
+									})
+									.catch((error) => {});
+							}
+						}
+					}
+				}
+			});
+			resizeObserver.observe(body);
 		}
 	};
 
@@ -124,13 +176,13 @@ ready(() => {
 
 	const _blogpostAddAnimation = () => {
 		let blogContent = document.querySelector(`.blog-content`);
-		if (blogContent){
+		if (blogContent) {
 			let headers = Array.prototype.slice.call(blogContent.querySelectorAll(`h2`, `h3`, `h4`, `h5`, `h6`), 0);
-			headers.forEach(header => {
+			headers.forEach((header) => {
 				header.setAttribute(`data-aos`, `fade-left`);
-			})
+			});
 		}
-	}
-	
+	};
+
 	_init();
 });

@@ -12,6 +12,7 @@ WEBSITE_ADMINISTRATION_EMAIL = env('WEBSITE_ADMINISTRATION_EMAIL')
 WEBSITE_SENDER = env('WEBSITE_SENDER')
 WEBSITE_STARTING_YEAR =env.int('WEBSITE_STARTING_YEAR')
 WEBSITE_TITLE = ('Tuedo', 'The Vibrant World of the Web.')
+ 
 now = datetime.datetime.now()
 CURRENT_YEAR = now.year
 

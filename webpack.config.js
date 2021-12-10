@@ -71,6 +71,7 @@ module.exports = {
 			patterns: [
 				{ from: './src/static/img', to: 'img' },
 				{ from: './src/static/fonts', to: 'fonts' },
+				{ from: './src/static/videos', to: 'videos' },
 			],
 		}),
 	],

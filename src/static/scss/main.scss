@@ -1,5 +1,5 @@
-@use "sass:math";
-@charset "utf-8";
+@charset "UTF-8";
+@use 'sass:math';
 
 // Import a Google Font
 //@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
@@ -369,16 +369,37 @@ div:not(.code-example) {
 	}*/
 }
 
-.hero--tuedo {
-	display: grid;
-	grid-template-rows: minmax(25vw, 40vh) 1fr;
+.hero {
+	position: relative;
 
-	& .hero--tuedo-header {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		justify-content: center;
-		z-index: 2;
+	& .hero--tuedo {
+		display: grid;
+		grid-template-rows: minmax(25vw, 40vh) 1fr;
+		z-index: 5;
+
+		& .hero--tuedo-header {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			z-index: 2;
+
+			& h1.title {
+				letter-spacing: 0.4rem;
+			}
+		}
+	}
+
+	& video.background-video {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0.75;
+		object-fit: cover;
+		z-index: 0;
+		filter: none;
 	}
 }
 
@@ -1409,6 +1430,14 @@ a > .w-cart {
 }
 
 // Media Queries
+
+@media screen and (max-width: 1024px) {
+	.hero {
+		& video.background-video {
+			filter: contrast(200%) blur(2px);
+		}
+	}
+}
 
 @media screen and (max-width: 600px) {
 	.tuedo-header-container,
