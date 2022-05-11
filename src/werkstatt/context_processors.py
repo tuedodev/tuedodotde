@@ -34,6 +34,7 @@ def getConfigData(request):
         'footer_year': f"{config.WEBSITE_STARTING_YEAR}" if config.CURRENT_YEAR==config.WEBSITE_STARTING_YEAR else f"{config.WEBSITE_STARTING_YEAR}-{config.CURRENT_YEAR}",
         'language_short': language_short,
         'google_site_verification': config.GOOGLE_SITE_VERIFICATION if not config.DEBUG else '',
+        'cookie_consent': config.COOKIE_CONSENT if not config.DEBUG else '',
     }
     return context
 

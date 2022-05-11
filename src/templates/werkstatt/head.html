@@ -1,6 +1,9 @@
 {% load static %}{% load meta %}
 
 <head {% meta_namespaces %}>
+	{% if cookie_consent %}
+		<script src="{{ cookie_consent }}" referrerpolicy="origin"></script>
+	{% endif %}
 	{% include "meta/meta.html" %}
 	{% if google_site_verification %}
 		<meta name="google-site-verification" content="{{ google_site_verification }}" />

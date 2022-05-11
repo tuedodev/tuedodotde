@@ -236,6 +236,8 @@ SOCIAL_LINKS = {
 
 GOOGLE_SITE_VERIFICATION = env('GOOGLE_SITE_VERIFICATION')
 
+COOKIE_CONSENT = env('COOKIE_CONSENT')
+
 # Functions
 def getLanguageCode(code):
     for tup in LANGUAGES:
